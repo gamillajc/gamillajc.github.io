@@ -16,6 +16,7 @@
             <li><a href = "#components">Components</a></li>
             <li><a href = "#functionality">Functionality</a></li>
             <li><a href = "#customize">User Customization</a></li>
+            <li><a href ="#conclusion">Conlcusion</a></li>
             <li><a href = "#code"> The Code</a></li> 
         </ul>
     </div>
@@ -35,7 +36,10 @@
             <a href="https://learn.adafruit.com/ble-hid-keyboard-buttons-with-circuitpython/circuitpython-for-feather-nrf52840">
             this project by John Park</a>, which was a bluetooth HID keyboard. I was intrigued by the Bluetooth capabilities of the device. However, I encountered
             several problems with the libraries necesarry to make the Bluetooth connection. I decided to continue on with the
-            project without Bluetooth connectivity and just a USB connection. With only 5 total buttons used in the project, I wanted to find a way
+            project without Bluetooth connectivity and just a USB connection. Originally, this project was designed to be a keyboard that can store
+            and output passwords, essentially acting as an auto-fill that did not require any storage of those passwords online. However, with
+            how easy it is to view the source code (code.py) file, it just did not seem practical to store sensitive information like that. 
+            So moving forward, I took into account that fact that ith only 5 total buttons used in the project, I wanted to find a way
             to have more usability in the device. I decided to opt for a multi-profile approach, where one button controls the changing of profiles
             and the rest handling the outputs.
             </p>
@@ -128,9 +132,23 @@
     </div>
 
     <div>
-        <h2 = "Conclusion">Conclusion</h2>
+        <h2 id= "conclusion" >Conclusion</h2>
         <p>
-            Overall, this project was a great experience that allowed me to apply some of the problem-solving skills tha
+            Overall, this project was a great way to apply my knowledge and experiences from my studies. Being a Computer Engineering student,
+            I have had experience with high order languages like Python, so writing the code was not a daunting task. However, it is inevitable
+            that I would run into problems along the way.
+            <br></br>
+             The biggest problem that I faced was trying to get the bluetooth functionality to work,
+            as one of the nRF52840's greatest features is its Bluetooth Low Energy (BLE) capabilities. After meticulously reading through error
+            messages, I concluded that there was some incompatabilities with the adafruit libraries for BLE. And after trying out all different
+            kinds of versions, I resorted to sticking with just a USB connection for the device especially since I was not able to access the libraries.
+            <br></br>
+            Other small problems included not noticing disconnected wires or forgetting how variables work in python functions. I had not 
+            used Python in quite some time, so the logical and syntax errors were bound to appear. But the rewarding part of the project is 
+            being able to overcome those obstacles and experience the satisfaction of your work functioning correctly.
+            <br></br>
+            If I were to redo or continue furhter on this project, I would look to designing a housing enclosure for the device and switches. Moreover,
+            I would look into finding a way to rewrite the macro profiles without the need to modify the source code.
         </p>
     </div>
     <div>
