@@ -39,9 +39,8 @@
             project without Bluetooth connectivity and just a USB connection. Originally, this project was designed to be a keyboard that can store
             and output passwords, essentially acting as an auto-fill that did not require any storage of those passwords online. However, with
             how easy it is to view the source code (code.py) file, it just did not seem practical to store sensitive information like that. 
-            So moving forward, I took into account that fact that ith only 5 total buttons used in the project, I wanted to find a way
-            to have more usability in the device. I decided to opt for a multi-profile approach, where one button controls the changing of profiles
-            and the rest handling the outputs.
+            So moving forward, I took into account that fact that with only 5 total buttons available, there should be a way to add more usabilityto the device. 
+            I decided to opt for a multi-profile approach, where one button controls the changing of profiles and the rest handling the outputs.
             </p>
     </div>
 
@@ -49,13 +48,11 @@
         <img src = "macro_keyboard_pic.jpg" alt="The complete Macro Keyboard Project" style = "width:600px;height:400px;">
         <h2 id = "Overview">Overview</h2>
         <p>
-            This device works as a fully-customizable multi-profile 4-Key Keyboard Macro device.
-            Each profile is signified by the neopixel LED on the board.
+            This device works as a fully-customizable multi-profile 4-Key macro keyboard, with CircuitPython being behind the code to achieve this.
             CircuitPython is an Adafruit supported derivative of MicroPython, which is 
-            essentially an optimized version of Python that runs on a microcontroller.
-            The USB HID library from Adafruit allows us to send keyboard and mouse commands
-            over a USB cable to any compatible device. The buttons are able to be remapped
-            by changing the source code. 
+            essentially an optimized version of Python that runs on a microcontroller. Each profile is signified by the neopixel LED on the board.
+            The USB HID library from Adafruit allows us to send keyboard and mouse commands over a USB cable to any compatible device. The 4 rightmost buttons are able to be remapped
+            by changing the source code. The leftmost button controls the profile switching.
         </p>
     </div>
 
@@ -81,9 +78,8 @@
             <br></br>
             <img src = "buttons.jpg" alt="Diagram of the 5 Push-Buttons" style = "width:300px;height:200px;">
             <br></br>
-            As seen in the image above, the leftmost button handles the changing of the macro profile, which can be done by pressing that button 
-            once. At the start of the program, the board will always be set on profile 1. In order to go back a profile (i.e. going from profile 3
-            to profile 2), the user can double click the leftmost button. The current version of the code has 4 profiles that showcase the capabilities of the device. 
+            At the start of the program, the board will always be set on profile 1. In order to go forward a profile, the user can click the leftmost button. To go back,
+            that button can be double pressed. The current version of the code has 4 profiles that showcase the capabilities of the device. 
             As seen in <a href = "#code">the code</a>
             on lines 77-80, each profile is a list with 4 elements for each button. The order of elements in the list corresponds to the order 
             of buttons from left to right. In the current version of the code, each profile does as follows:
