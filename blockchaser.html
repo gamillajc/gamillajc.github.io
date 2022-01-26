@@ -10,15 +10,47 @@
     <p>
         This project was developed as a part of my ECE 4225: Hardware/Software Co-Design class where we were tasked to
         design an embedded system that utilizes communication between hardware and software. For this project, the
-        Xilinx Basys 3
-        FPGA Development board and it's push buttons were utilized as the hardware interface, as well as a VGA Monitor.
+        Xilinx Basys 3 FPGA Development board and it's push buttons were utilized as the hardware interface, as well as
+        a VGA Monitor.
         The MicroBlaze
         Softcore processor was used for the software interface, running a C program. Below is the presentation and
         report associated with
         the project.
     </p>
 </div>
+<div>
+    <h2 id="Equipment/Tools Used">Equipment/Tools Used</h2>
+    <ul>
+        <li>Xilinx Vivado</li>
+        <li>Xilinx Basys 3 FPGA Development Board</li>
+        <li>MicroBlaze softcore processor</li>
+        <li>640x480 @60Hz VGA monitor</li>
+        <li> C programming</li>
+    </ul>
+</div>
+<div>
+    <h2 id="Design">Design</h2>
+    <p>
+        For the design of the project, four push buttons on the Basys 3 board were used as the user inputs. 
+        In hardware, the four buttons are used
+        to drive a value that is wired to the MicroBlaze softcore processor. It has a C program that reads that value
+        and determines which directional button was pressed. Three VGA frame buffers were implemented for each RGB
+        color, whose registers get written into by software based on what needs to be drawn on the screen. They are
+        wired to a VGA controller in hardware that implements the vertical and horizontal synchronizations of a VGA
+        monitor and processes the RGB values to output onto a 640x480 @60Hz VGA monitor. For the actual game design, the
+        user’s block remains still at the start of the game and upon a directional button press, the game starts and the
+        user’s block will start to move in that direction until a different button is pressed. The goal is to reach the
+        white target blocks on the screen to increase the score and reach the score required to win the game. Once that
+        score is reached, the game will reset and the user’s block will return to the center of the screen.
 
+        The basic functional decomposition of this design included functions like handling user input, outputting VGA
+        graphics, handling the
+        game logic, user block movement, and target positions. Once they were clearly defined, they were then analyzed
+        to determine
+        whether they should be implemented in hardware or software. For instance, the user input handling was
+        implemented via hardware (VHDL).
+    </p>
+</div>
 <div>
     <h2> Video Demo </h2>
     <p><a href="https://youtu.be/RIJVeV5qCYg">Demo Link</a></p>
@@ -27,7 +59,7 @@
     <h2> Powerpoint Presentation</h2>
     <iframe
         src="https://onedrive.live.com/embed?cid=C201B3421EE8BE28&resid=C201B3421EE8BE28%214645&authkey=AFblVPpoUhVeOVs&em=2"
-        width="402" height="327" frameborder="0" scrolling="no"></iframe>
+        width="804" height="654" frameborder="0" scrolling="no"></iframe>
 </div>
 <div>
     <h2> Project Report</h2>
